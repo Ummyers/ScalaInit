@@ -27,6 +27,8 @@ println({
   nombre + " aprendiendo Scala " //Imprimira lo indicado en la ultima linea del bloque
 })
 
+// En Scala no hay return, devuelve lo que está en la ultima línea de codigo
+
 val nombre = "Fernanda"
 // Obteniendo el longitud de un String
 var longitud = nombre.length();

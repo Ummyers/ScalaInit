@@ -1,3 +1,6 @@
+/* Ummyers, Mayo 2021
+* Para el Interprete
+*/
 
 //Función
 (x: Int) => x + 1
@@ -41,3 +44,9 @@ println("Método cuadrado " + potencia(2)(2))
 
 def name: String = System.getProperty("user.name")
 println("Hello, " + name + "!")
+
+def getSquareString(input: Double): String = {
+  val square = input * input
+  square.toString
+}
+println(getSquareString(2.5)) // 6.25
