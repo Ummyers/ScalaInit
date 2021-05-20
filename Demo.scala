@@ -23,6 +23,7 @@ object Demo {
       println("Segundo timeName: " + timeNam)
 
       //No puede haber una variable con nombre X, a la que se le asigne el valor de una función tambien llamada X
+      println(price(100,2))
    }
 
    def time(speed: Double): Double = {
@@ -37,4 +38,15 @@ object Demo {
       val duration = distance / speed
       nombre + " " + duration * 60
    }
+
+   def price(precio: Int, veces: Int): String ={
+      val total = precio * veces
+      if (total < 100){
+         "Es bara bara"
+      }else{ 
+         "El precio es: " + total.toString
+      }
+   }
+
+   
 }
