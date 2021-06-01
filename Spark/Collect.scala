@@ -15,15 +15,17 @@ object SumOfNumbersProblem {
     val inputNumbers = List(3,5,7,11)
     val numberRdd = sc.parallelize(inputNumbers)
 
-    val numbers = numberRdd.collect()
-    val words = numbers.reduce((x,y) => x + y)
+//    val numbers = numberRdd.collect()
+    val words = numberRdd.reduce((x,y) => x + y)
     println(words)
 
 //
-//    val inputNumber = sc.textFile("in/prime_nums.text")
-//    val inter = inputNumber.collect()
-//    val sum = inter.reduce((x,y) => x + y)
-//    println("La suma es: " + sum)
-
+    val inputNumber = sc.textFile("in/prime_nums.text")
+    val lines = inputNumber.flatMap(line => line.split("\\s+"))
+    //En lugar de !number.isEmpty si es string vacio dará true y al negarlo será false y no lo incluirá
+    val validNumbers = lines.filter(numberString => numberString.nonEmpty)
+    val numbersValid = validNumbers.map(numS => numS.toInt)
+    val sum = numbersValid.reduce((x,y)=> x + y)
+    println("La suma de los primeros 100 primos es: " + sum)
   }
 }
